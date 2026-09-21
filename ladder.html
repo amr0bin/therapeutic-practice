@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noai, noimageai" />
+<title>The Ladder · Therapeutic Practice</title>
+<meta name="description" content="The prerequisite ladder, the counted things, and the two elective traps." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+
+    <nav class="topbar" aria-label="Therapeutic Practice">
+      <a class="mark" href="index.html">Therapeutic&nbsp;Practice</a>
+      <div class="navlinks">
+        <a href="index.html">The Wednesday</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="ladder.html" aria-current="page">The Ladder</a>
+        <a href="the-ceiling.md">Ceiling</a>
+        <a href="the-ledgers.md">Ledgers</a>
+        <a href="faculty-map.md">Faculty</a>
+        <a href="house-rules.md">House rules</a>
+        <a href="verification.md">Verify</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <p class="eyebrow"><span>The slow accumulator</span><span class="status" id="stamp">—</span></p>
+      <h1>The ladder, and the counted things</h1>
+      <p class="lede">Cheap, slow, unglamorous, and the thing that closes the door by inaction rather than by rejection. Six courses if the two institutions' equivalency tables agree with each other; nine if they do not. That difference is three terms, and it is currently unknown.</p>
+    </header>
+
+    <section class="essay" aria-label="Courses">
+      <h2>The prerequisite courses</h2>
+      <div class="bar" id="course-bar" role="img" aria-label="Prerequisite progress"><span style="width:0%"></span></div>
+      <p class="meta" id="course-count" style="font-size:13px;color:var(--stone);margin:0 0 20px"></p>
+      <ul class="ladder" id="courses"></ul>
+      <div class="note flag">
+        <p><b>Hard boundary:</b> UBC requires every prerequisite complete by <b>31 December of the application year</b> — 31 December 2030. At one course a term from the inventory this is comfortable. At two a term it competes with the crisis-line shift, and the shift is the three-year clock.</p>
+        <p><b>Fund it.</b> These are undergraduate courses, and both universities' staff tuition waivers cover undergraduate credits for essentially all staff groups. A staff post at either institution pays for this ladder entirely.</p>
+      </div>
+    </section>
+
+    <section class="essay" aria-label="Counted things">
+      <h2>The counted things</h2>
+      <p>Totals only — no dates, no settings, no people, so this page can stay public. Updated from the private logs at the monthly Wednesday.</p>
+      <div id="counters"></div>
+    </section>
+
+    <section class="essay" aria-label="The traps">
+      <h2>The two elective traps</h2>
+      <p>Written down in 2026 because they are chosen in 2032, for reasons of interest, timetable or supervisor — none of which are registration reasons. A transcript missing either one means additional coursework after graduation, at your own cost, while not yet registered and not yet earning.</p>
+      <ul class="ladder" id="traps"></ul>
+    </section>
+
+    <footer class="foot">
+      <span>Detail in <a href="prerequisites.md">prerequisites.md</a> and <a href="registration.md">registration.md</a></span>
+      <span>Edit <code>ladder-data.js</code>, not this page</span>
+    </footer>
+
+  </div>
+
+<script src="ladder-data.js"></script>
+<script>
+(function(){
+  var L = window.TP_LADDER || {courses:[],counters:[],traps:[]};
+
+  var done = L.courses.filter(function(c){ return c.state === "done"; }).length;
+  var total = L.courses.length;
+  document.querySelector("#course-bar span").style.width =
+    (total ? Math.round(done/total*100) : 0) + "%";
+  document.getElementById("course-count").textContent =
+    done + " of " + total + " complete · best case 6, worst case 9, pending both equivalency tables";
+  document.getElementById("stamp").textContent = done + " / " + total + " courses";
+
+  var cEl = document.getElementById("courses");
+  L.courses.forEach(function(c){
+    var li = document.createElement("li");
+    var state = c.state === "done" ? "done" : (c.state === "running" ? "" : "open");
+    var label = c.state === "done" ? "Complete" : (c.state === "running" ? "Running" : "Not started");
+    var placed = c.where || c.when ? '<small>' + [c.where, c.when].filter(Boolean).join(" · ") + '</small>' : "";
+    li.innerHTML =
+      '<div class="code">' + c.code + '</div>' +
+      '<div class="name">' + c.name + '<small>' + c.note + '</small>' + placed + '</div>' +
+      '<div class="state ' + state + '">' + label + '</div>';
+    cEl.appendChild(li);
+  });
+
+  var nEl = document.getElementById("counters");
+  L.counters.forEach(function(k){
+    var pct = k.need ? Math.min(100, Math.round(k.have/k.need*100)) : 0;
+    var d = document.createElement("div");
+    d.style.margin = "0 0 26px";
+    d.innerHTML =
+      '<div style="display:flex;justify-content:space-between;gap:14px;align-items:baseline;flex-wrap:wrap">' +
+        '<b style="color:var(--ink-strong);font-size:16px;font-weight:500">' + k.label + '</b>' +
+        '<span style="font-size:13px;color:var(--stone)">' + k.have + " of " + k.need + " " + k.unit + '</span>' +
+      '</div>' +
+      '<div class="bar" role="img" aria-label="' + k.label + ': ' + k.have + ' of ' + k.need + ' ' + k.unit + '"><span style="width:' + pct + '%"></span></div>' +
+      '<p style="font-size:13.5px;color:var(--stone);margin:0;line-height:1.55">' + k.note + '</p>';
+    nEl.appendChild(d);
+  });
+
+  var tEl = document.getElementById("traps");
+  L.traps.forEach(function(t){
+    var li = document.createElement("li");
+    li.innerHTML =
+      '<div class="code">2032</div>' +
+      '<div class="name">' + t.name + '<small>' + t.why + '</small></div>' +
+      '<div class="state open">Take it</div>';
+    tEl.appendChild(li);
+  });
+})();
+</script>
+</body>
+</html>

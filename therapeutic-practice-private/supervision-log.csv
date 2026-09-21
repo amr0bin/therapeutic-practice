@@ -1,0 +1,22 @@
+date,supervisor,credential,setting,mode,format,duration_hours,confirmed,notes
+# ---------------------------------------------------------------------------
+# Every supervision hour, formatted for a registrar from the first entry.
+#
+# BCACC (RCC) requires at least 100 hours of clinical supervision, of which at
+# least 25 must be DIRECT. CCPA (CCC) requires at least 10 hours of direct
+# supervision. Both want dates and a supervisor who will confirm them.
+#
+# date            ISO, YYYY-MM-DD
+# supervisor      full name as it will appear on the registration form
+# credential      RCC / CCC / R.Psych / RSW / RCAT — the registrar checks this
+# setting         where the supervised work happened
+# mode            direct / indirect      <- the split BCACC asks for
+# format          individual / group / dyadic
+# duration_hours  decimal, e.g. 1.5
+# confirmed       blank / requested / confirmed
+# notes           focus of the supervision. No client detail.
+#
+# Crisis-line supervision does not count toward RCC's 100 hours, but start the
+# log there anyway: the habit is what matters, and the format should not be
+# invented in 2033 from six years of prose.
+# ---------------------------------------------------------------------------

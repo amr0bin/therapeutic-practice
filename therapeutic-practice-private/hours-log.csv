@@ -1,0 +1,19 @@
+date,setting,role,hours,direct_hours,supervisor,supervision_hours,attested,counts_toward,notes
+# ---------------------------------------------------------------------------
+# Every hour of service, training and helping work. Filled within 24 hours.
+#
+# date            ISO, YYYY-MM-DD
+# setting         Crisis Centre BC / Make Space / ohHEY / lab / practicum site
+# role            volunteer / facilitator / trainee / RA / practicum student
+# hours           total hours in the session or shift
+# direct_hours    hours of direct client or caller contact, if any. CCPA counts these
+# supervisor      name of the person who can confirm it
+# supervision_hours  supervision received in this entry, if any
+# attested        blank / requested / confirmed — whether it is documented externally
+# counts_toward   helping-experience / service / supervision / direct / training
+# notes           what you did. NO identifying detail about anyone else. Ever.
+#
+# Backfill first: Make Space, Slow Leaf and the ohHEY sessions plausibly already
+# count toward UBC's three-year helping-experience minimum. Inventory before
+# assuming the total is zero.
+# ---------------------------------------------------------------------------

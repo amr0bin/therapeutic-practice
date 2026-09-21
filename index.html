@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noai, noimageai" />
+<title>The Wednesday · Therapeutic Practice</title>
+<meta name="description" content="A launcher for Wednesdays. What this week is, the standing order for it, and the next dated thing." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+
+    <nav class="topbar" aria-label="Therapeutic Practice">
+      <a class="mark" href="index.html">Therapeutic&nbsp;Practice</a>
+      <div class="navlinks">
+        <a href="index.html" aria-current="page">The Wednesday</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="ladder.html">The Ladder</a>
+        <a href="the-ceiling.md">Ceiling</a>
+        <a href="the-ledgers.md">Ledgers</a>
+        <a href="faculty-map.md">Faculty</a>
+        <a href="house-rules.md">House rules</a>
+        <a href="verification.md">Verify</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <p class="eyebrow"><span>Therapeutic Studio</span><span class="status" id="stamp">Stage one · Ground</span></p>
+      <h1>Wednesdays, <em>and the years they are aimed at</em></h1>
+      <p class="lede">The launcher. What this week is, the standing order for it, and the next dated thing. The reasoning behind every decision here is kept, but folded away in the notes, so it does not have to be reread each week.</p>
+    </header>
+
+    <section class="today" aria-label="Where this week sits">
+      <div class="today-cell">
+        <span class="k">Today</span>
+        <span class="v" id="today-day">—</span>
+        <span class="d" id="today-note"></span>
+      </div>
+      <div class="today-cell">
+        <span class="k">Season</span>
+        <span class="v" id="season">—</span>
+        <span class="d" id="season-note"></span>
+      </div>
+      <div class="today-cell" id="next-cell">
+        <span class="k">Next dated thing</span>
+        <span class="v" id="next-name">—</span>
+        <span class="d" id="next-when"></span>
+      </div>
+    </section>
+
+    <section class="order" aria-label="The standing order">
+      <div class="order-col">
+        <h2>The Wednesday, in order</h2>
+        <ol class="runsheet">
+          <li><span>First</span><div><b>Logs and calendar.</b> Five minutes. Anything from the week not yet recorded, then the next dated thing above.</div></li>
+          <li><span>Two hours</span><div><b>The review.</b> Screening, extraction or synthesis. It needs three years to reach print, so it gets the best hours of the day rather than what is left of them.</div></li>
+          <li><span>One hour</span><div><b>The notebook.</b> Reading notes, review progress, or a practitioner conversation written up. Monthly is the floor; weekly is this season.</div></li>
+          <li><span>Then</span><div><b>One ladder action.</b> An email, a registration, a course week. Small, and always moving.</div></li>
+          <li><span>Fortnightly</span><div><b>The spoken piece.</b> One take, trimmed but not edited. Rehearsal for a mock session recording in 2033 and an interview in 2031.</div></li>
+        </ol>
+      </div>
+      <div class="order-col">
+        <h2>And on the longer beats</h2>
+        <ol class="runsheet">
+          <li><span>Monthly</span><div>Last Wednesday. One resource documented and licensed. The boundary pages skimmed. <b>One name in the relational ledger</b> — one contact, one record.</div></li>
+          <li><span>Twice a year</span><div>April and October. Two faculty profiles reread, one recent paper read, the reading note written into the notebook. One practitioner interview.</div></li>
+          <li><span>Annually</span><div>First Wednesday of November. <b>The five ledgers reviewed</b>, the verification list struck through, and the question rewritten — one paragraph, dated, appended, never overwritten.</div></li>
+        </ol>
+        <div class="note" style="margin-top:22px">
+          <p><b>The floor, in every season:</b> one notebook entry a month, the hours log within twenty-four hours of any service, the crisis-line shift kept, and one calendar check a month. Everything else is allowed to stop.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="The system">
+      <h2 class="sr">The files</h2>
+      <div class="cards">
+        <a class="card" href="the-system.md">
+          <span class="k">Start here</span>
+          <h3>The system</h3>
+          <p>What Therapeutic Practice is, the two ceilings, the hinge between them, and what verification changed. The document every other file here is an operational copy of.</p>
+        </a>
+        <a class="card" href="the-ceiling.md">
+          <span class="k">What it is for</span>
+          <h3>The ceiling</h3>
+          <p>1 December 2030, the admissions panel. ~2034, the hiring panel. And the practicum seat in January 2033 that is the actual hinge.</p>
+        </a>
+        <a class="card" href="the-floor.md">
+          <span class="k">What survives</span>
+          <h3>The floor</h3>
+          <p>Four things that hold through Leeds and through the practicum year. Decided now, in a season that is not hard.</p>
+        </a>
+        <a class="card" href="ladder.html">
+          <span class="k">The slow accumulator</span>
+          <h3>The ladder</h3>
+          <p>Six to nine prerequisite courses, the hours counted against what registration wants, and the two elective traps to write down in 2026 and take in 2032.</p>
+        </a>
+        <a class="card" href="calendar.html">
+          <span class="k">Somebody else's dates</span>
+          <h3>The calendar</h3>
+          <p>The forcing function. Deadlines, consultation windows and the regulation date. Self-imposed deadlines are not deadlines and are not here.</p>
+        </a>
+        <a class="card" href="programmes.md">
+          <span class="k">The gate</span>
+          <h3>The programmes</h3>
+          <p>UBC and SFU side by side on the four differences that actually decide it: the doctoral door, the thesis gate, the GRE, and accreditation.</p>
+        </a>
+        <a class="card" href="registration.md">
+          <span class="k">2034, decided in 2032</span>
+          <h3>Registration</h3>
+          <p>RCC, CCC, and a college whose standards do not exist yet. The hedge, and the two elective choices that have to be written down years early.</p>
+        </a>
+        <a class="card" href="faculty-map.md">
+          <span class="k">Who opens a door</span>
+          <h3>The faculty map</h3>
+          <p>Named people at both institutions, their published interests, and the two gaps that are findings rather than absences.</p>
+        </a>
+        <a class="card" href="the-ledgers.md">
+          <span class="k">The measure</span>
+          <h3>The five ledgers</h3>
+          <p>Corpus, shown, funded, scholarly, relational. One question each, asked once a year on the first Wednesday of November.</p>
+        </a>
+        <a class="card" href="house-rules.md">
+          <span class="k">The condition of the work</span>
+          <h3>House rules</h3>
+          <p>Words, acts, records, and respect for the licensed. Written to read as though 29 November 2027 had already passed.</p>
+        </a>
+        <a class="card" href="the-question.md">
+          <span class="k">One paragraph a year</span>
+          <h3>The question</h3>
+          <p>What the practice found this year. Cheapest item in the system, and the one every door reads.</p>
+        </a>
+        <a class="card" href="verification.md">
+          <span class="k">Marked, not smoothed</span>
+          <h3>Verification</h3>
+          <p>Thirteen open items, ranked by what they cost to get wrong. Nothing marked open should be planned around.</p>
+        </a>
+      </div>
+    </section>
+
+    <div class="note flag">
+      <p><b>The boundary.</b> Nothing in this repository is client-derived, participant-identifying, or drawn from anyone who came to the room — at any stage, de-identified or not. The hours log, the reflective journal, incident notes and references live in <b>therapeutic-practice-private</b>, a separate repository. See <a class="inline" href="README.md">README</a> for why that is two repositories rather than one with a <code>.gitignore</code>.</p>
+    </div>
+
+    <footer class="foot">
+      <span>Therapeutic Studio · the private operating system, not a public name</span>
+      <span>Checked 20 September 2026</span>
+    </footer>
+
+  </div>
+
+<script src="calendar-data.js"></script>
+<script>
+(function(){
+  var now = new Date();
+  var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  var dow = now.getDay();
+
+  var dayEl = document.getElementById("today-day");
+  var noteEl = document.getElementById("today-note");
+  dayEl.textContent = days[dow];
+  if (dow === 3) {
+    noteEl.textContent = "The block. Logs first, then the review.";
+  } else if (dow === 2) {
+    noteEl.textContent = "Tomorrow is the block. Nothing to do tonight.";
+  } else {
+    var until = (3 - dow + 7) % 7;
+    noteEl.textContent = until + (until === 1 ? " day" : " days") + " until the block.";
+  }
+
+  // Seasons, from the-system.md. Each closes on a condition, but the dates
+  // are close enough to orient by.
+  var seasons = [
+    { until:"2027-08-31", name:"Ground", note:"Wednesday at full intensity. The protocol, the crisis line, the inventory." },
+    { until:"2029-08-31", name:"Leeds",  note:"Wednesday at the floor. The review moves in module breaks, not weekly. This is a season, not a failure." },
+    { until:"2030-12-31", name:"The gate", note:"Wednesday plus an evening. Prerequisites, references, the supervisor conversations." },
+    { until:"2033-08-31", name:"The Room", note:"The degree is the block. Studio and Labs at their floors." },
+    { until:"2034-04-30", name:"Practicum", note:"Two and a half days a week on placement. The floor is the hours log alone." },
+    { until:"2099-12-31", name:"Practice", note:"Supervision hours, registration, the role." }
+  ];
+  for (var i=0;i<seasons.length;i++){
+    if (now <= new Date(seasons[i].until + "T23:59:59")) {
+      document.getElementById("season").textContent = seasons[i].name;
+      document.getElementById("season-note").textContent = seasons[i].note;
+      break;
+    }
+  }
+
+  // Next dated thing
+  var cal = (window.TP_CALENDAR || []).slice().sort(function(a,b){
+    return a.date < b.date ? -1 : 1;
+  });
+  var next = null;
+  for (var j=0;j<cal.length;j++){
+    if (new Date(cal[j].date + "T23:59:59") >= now) { next = cal[j]; break; }
+  }
+  if (next) {
+    document.getElementById("next-name").textContent = next.name;
+    var d = new Date(next.date + "T12:00:00");
+    var away = Math.round((d - now) / 86400000);
+    var fmt = d.toLocaleDateString("en-CA", { day:"numeric", month:"long", year:"numeric" });
+    document.getElementById("next-when").textContent =
+      fmt + " · " + (away <= 0 ? "today" : away + (away === 1 ? " day away" : " days away"));
+    if (away <= 45) document.getElementById("next-cell").classList.add("urgent");
+  }
+})();
+</script>
+</body>
+</html>
